@@ -40,6 +40,17 @@ public class MainForm extends JFrame{
                 form2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
+        buttonList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                KinderG form2 = new KinderG();
+                form2.setVisible(true);
+                form2.setContentPane(form2.panel);
+                form2.setTitle("Ясли");
+                form2.setSize(600, 450);
+                form2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            }
+        });
     }
 
     /*public static void main(String[] args) {

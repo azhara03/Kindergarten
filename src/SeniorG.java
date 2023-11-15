@@ -1,6 +1,8 @@
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,6 +16,10 @@ public class SeniorG {
     CallableStatement stored_pro = null;
     Statement statement = null;
     ResultSet rs = null;
+
+    public SeniorG() {
+        UpdateJTable();
+    }
 
     private void UpdateJTable(){
         try{

@@ -18,9 +18,7 @@ public class MiddleG extends javax.swing.JFrame{
     ResultSet rs = null;
 
     public MiddleG() {
-        panel.addComponentListener(new ComponentAdapter() {
-
-        });
+            UpdateJTable();
     }
 
     private void UpdateJTable(){
@@ -34,8 +32,5 @@ public class MiddleG extends javax.swing.JFrame{
         catch(Exception e){
             e.printStackTrace();
         }
-    }
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {
-        UpdateJTable();
     }
 }

@@ -7,8 +7,15 @@ import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -30,6 +37,10 @@ public class AllChildren extends javax.swing.JFrame {
     private JTextField address;
     private JTextField pNumberM;
     private JComboBox kruzhokCB;
+    private JButton отчетButton;
+    private JButton добавитьButton;
+    private JButton диаграммаButton;
+    private JButton удалитьButton;
 
     Connection conn =null;
     CallableStatement stored_pro = null;
@@ -69,10 +80,75 @@ public class AllChildren extends javax.swing.JFrame {
                 UpdateJTable();
             }
         });
+
         отчетПоIdButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 showById();
+            }
+        });
+        отчетButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showMeAllReport();
+            }
+        });
+        добавитьButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    conn = Main.ConnectDB();
+                    stored_pro = conn.prepareCall("{call insert_child (?,?,?,?,?,?,?,?)}");
+                    stored_pro.setString(1, FIO.getText());
+                    stored_pro.setString(2, date.getText());
+                    stored_pro.setString(3, address.getText());
+                    stored_pro.setString(4, pNumberD.getText());
+                    stored_pro.setString(5, pNumberM.getText());
+                    stored_pro.setString(6, (String)groupCB.getSelectedItem());
+                    stored_pro.setString(7, (String)kruzhokCB.getSelectedItem());
+                    stored_pro.setString(8, (String)nationalityCB.getSelectedItem());
+                    stored_pro.execute();
+                    JOptionPane.showMessageDialog(null, "Saved");
+                    groupCB.setSelectedItem(null);
+                    kruzhokCB.setSelectedItem(null);
+                    nationalityCB.setSelectedItem(null);
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex);
+                }
+                UpdateJTable();
+            }
+        });
+        диаграммаButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO add your handling code here:
+                DefaultCategoryDataset dataset  = new DefaultCategoryDataset();
+                dataset.setValue(35, "Marks", "Отсутствует(не посещают)");
+                dataset.setValue(20, "Marks", "Chess");
+                dataset.setValue(65, "Marks", "Dancing");
+                JFreeChart chart  = ChartFactory.createBarChart("Количество посещений кружков ", "Наименование кружков", "Количество посещений в %", dataset, PlotOrientation.VERTICAL, false, true, false);
+                CategoryPlot p=chart.getCategoryPlot();
+                p.setRangeGridlinePaint(Color.black);
+                ChartFrame frame  = new ChartFrame("График", chart);
+                frame.setVisible(true);
+                frame.setSize(650,550);
+            }
+        });
+        удалитьButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    conn = Main.ConnectDB();
+                    stored_pro = conn.prepareCall("{call delete_child (?)}");
+                    stored_pro.setString(1, id.getText());
+                    stored_pro.execute();
+                    JOptionPane.showMessageDialog(null, "Deleted");
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex);
+                }
+                UpdateJTable();
             }
         });
     }

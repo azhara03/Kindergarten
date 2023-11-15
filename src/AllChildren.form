@@ -171,22 +171,6 @@
             </constraints>
             <properties/>
           </component>
-          <component id="3780b" class="javax.swing.JButton" default-binding="true">
-            <constraints>
-              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Отчет"/>
-            </properties>
-          </component>
-          <component id="42fb3" class="javax.swing.JButton" default-binding="true">
-            <constraints>
-              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Добавить"/>
-            </properties>
-          </component>
           <component id="b4628" class="javax.swing.JLabel">
             <constraints>
               <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -217,7 +201,23 @@
             </constraints>
             <properties/>
           </component>
-          <component id="15dcf" class="javax.swing.JButton" default-binding="true">
+          <component id="d6a4d" class="javax.swing.JButton" binding="отчетButton" default-binding="true">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Отчет"/>
+            </properties>
+          </component>
+          <component id="e9ae4" class="javax.swing.JButton" binding="добавитьButton" default-binding="true">
+            <constraints>
+              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Добавить "/>
+            </properties>
+          </component>
+          <component id="7a96c" class="javax.swing.JButton" binding="диаграммаButton" default-binding="true">
             <constraints>
               <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -225,7 +225,7 @@
               <text value="Диаграмма"/>
             </properties>
           </component>
-          <component id="7d6c7" class="javax.swing.JButton" default-binding="true">
+          <component id="34242" class="javax.swing.JButton" binding="удалитьButton" default-binding="true">
             <constraints>
               <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
