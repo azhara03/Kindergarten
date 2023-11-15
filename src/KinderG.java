@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class KinderG extends javax.swing.JFrame{
-    private JPanel panel;
+    public JPanel panel;
     private JTable table1;
 
     Connection conn = null;
