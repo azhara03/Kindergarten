@@ -12,7 +12,7 @@ public class Main {
         Connection conn = null;
 
         try {
-            String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=kindergartenDB;username=sa;password=user103;жEncrypt=True;TrustServerCertificate=True";
+            String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=kindergartenDB;username=sa;password=user103;Encrypt=True;TrustServerCertificate=True";
             String user = "sa";
             String pass = "user103";
             conn = DriverManager.getConnection(dbURL, user, pass);

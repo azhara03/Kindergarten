@@ -17,7 +17,7 @@ public class KinderG extends javax.swing.JFrame{
     ResultSet rs = null;
 
     public KinderG() {
-
+        UpdateJTable();
     }
 
     private void UpdateJTable(){
@@ -31,8 +31,5 @@ public class KinderG extends javax.swing.JFrame{
         catch(Exception e){
             e.printStackTrace();
         }
-    }
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {
-        UpdateJTable();
     }
 }

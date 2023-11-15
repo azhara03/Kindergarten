@@ -62,9 +62,9 @@ public class AllChildren extends javax.swing.JFrame {
                     stored_pro.setString(9, (String)nationalityCB.getSelectedItem());
                     stored_pro.execute();
                     JOptionPane.showMessageDialog(null, "Updated");
-                }catch(Exception e){
-                    e.printStackTrace();
-                    JOptionPane.showMessageDialog(null, e);
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, ex);
                 }
                 UpdateJTable();
             }

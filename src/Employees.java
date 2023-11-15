@@ -4,10 +4,8 @@ import java.sql.*;
 import java.util.HashMap;
 
 import net.proteanit.sql.DbUtils;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -240,9 +238,8 @@ public class Employees extends JFrame {
 
     private void showMeAllReport() {
 
-        try {
             conn = Main.ConnectDB();
-            JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\VICTUS\\Documents\\NetBeansProjects\\kindergarten\\src\\kindergarten\\report1.jrxml");
+            /*JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
             String sql = "SELECT View_employee.\"id\" AS View_employee_id, View_employee.\"FIO\" AS View_employee_FIO, "
                     + "View_employee.\"dateborn\" AS View_employee_dateborn, View_employee.\"position\" AS View_employee_position,"
                     + " View_employee.\"adress\" AS View_employee_adress, View_employee.\"phoneNumber\" AS View_employee_phoneNumber, "
@@ -255,10 +252,38 @@ public class Employees extends JFrame {
             JasperViewer.viewReport(jasperPrint, false);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
+        }*/
+            /*JRBeanCollectionDataSource beanCollectionDataSource= new JRBeanCollectionDataSource()
+            JasperReport jreport = JasperCompileManager.compileReport("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
 
-    private void showById() {
+            // The data source to use to create the report
+            JRBeanCollectionDataSource jcs = new JRBeanCollectionDataSource(list);
+            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, jcs);
+
+            // Viewing the report
+            JasperViewer.viewReport(jprint, false);
+    } catch (JRException e) {
+            throw new RuntimeException(e);*/
+
+           /* try {
+                // Загрузка JRXML файла
+                JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
+
+                // Создание пустого отчета JasperPrint (без данных)
+                JasperPrint jasperPrint = new JasperPrint();
+
+                // Заполнение отчета данными из JRXML-шаблона
+                JasperFillManager.fillReport(jasperReport, new JRBaseEmptyDataSource(), jasperPrint);
+
+                // Отображение отчета в JasperViewer
+                JasperViewer viewer = new JasperViewer(jasperPrint, false);
+                viewer.setVisible(true);
+            } catch (JRException e) {
+                e.printStackTrace();
+            }*/
+        }
+
+        private void showById() {
         try {
             conn = Main.ConnectDB();
             JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\VICTUS\\Documents\\NetBeansProjects\\kindergarten\\src\\kindergarten\\newReport1.jrxml");
