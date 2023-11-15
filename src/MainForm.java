@@ -43,23 +43,13 @@ public class MainForm extends JFrame{
         buttonList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                KinderG form2 = new KinderG();
-                form2.setVisible(true);
-                form2.setContentPane(form2.panel);
-                form2.setTitle("Ясли");
-                form2.setSize(600, 450);
-                form2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                AllChildren form3 = new AllChildren();
+                form3.setVisible(true);
+                form3.setContentPane(form3.panel);
+                form3.setTitle("Список всех детей");
+                form3.setSize(600, 450);
+                form3.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
     }
-
-    /*public static void main(String[] args) {
-        MainForm form = new MainForm();
-        form.setVisible(true);
-        form.setContentPane(form.panel);
-        form.setTitle("Kindergarten");
-        form.setSize(600, 300);
-        form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }*/
-
 }
