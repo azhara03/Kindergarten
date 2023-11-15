@@ -45,5 +45,26 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-beanutils-1.8.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-collections-3.2.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-digester-2.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/groovy-all-2.0.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/jasperreports-5.6.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/livingdoc-confluence5-plugin-1.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/sqljdbc42.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/swingx-1.6.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/rs2xml.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/livingdoc-confluence5-plugin-1.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/rs2xml.jar!/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
