@@ -45,6 +45,12 @@ public class MainForm extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 AllChildren form3 = new AllChildren();
                 form3.setVisible(true);
+                form3.setContentPane(form3.panel);
+                form3.setTitle("Список всех детей");
+                form3.setSize(600, 450);
+                form3.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                AllChildren form3 = new AllChildren();
+                form3.setVisible(true);
                 form3.setContentPane(form3.panelchill);
                 form3.setTitle("Ясли");
                 form3.setSize(600, 450);
@@ -52,14 +58,4 @@ public class MainForm extends JFrame{
             }
         });
     }
-
-    /*public static void main(String[] args) {
-        MainForm form = new MainForm();
-        form.setVisible(true);
-        form.setContentPane(form.panel);
-        form.setTitle("Kindergarten");
-        form.setSize(600, 300);
-        form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }*/
-
 }

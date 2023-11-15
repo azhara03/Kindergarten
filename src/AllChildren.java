@@ -23,6 +23,7 @@ import java.util.HashMap;
 
 public class AllChildren extends javax.swing.JFrame {
 
+    public JPanel panel;
     public JPanel panelchill;
     private JTable jTable1;
     private JTextField id;
@@ -49,13 +50,13 @@ public class AllChildren extends javax.swing.JFrame {
     PreparedStatement pst=null;
 
     public AllChildren() {
-//        UpdateJTable2();
+       UpdateJTable();
 //        open_position();
 //        open_kruzhok();
 //        open_group();
-//        position.setSelectedItem(null);
+//        position.(null);
 //        kruzhok.setSelectedItem(null);
-//        group.setSelectedItem(null);
+//        group.(null);
         обновитьButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -72,25 +73,12 @@ public class AllChildren extends javax.swing.JFrame {
                     stored_pro.setString(8, (String)kruzhokCB.getSelectedItem());
                     stored_pro.setString(9, (String)nationalityCB.getSelectedItem());
                     stored_pro.execute();
-                    JOptionPane.showMessageDialog(null, "Updated");
+                    JOptionPane.showMessageDialog(null, "Обновить");
                 }catch(Exception ex){
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex);
                 }
                 UpdateJTable();
-            }
-        });
-
-        отчетПоIdButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showById();
-            }
-        });
-        отчетButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showMeAllReport();
             }
         });
         добавитьButton.addActionListener(new ActionListener() {
@@ -108,7 +96,7 @@ public class AllChildren extends javax.swing.JFrame {
                     stored_pro.setString(7, (String)kruzhokCB.getSelectedItem());
                     stored_pro.setString(8, (String)nationalityCB.getSelectedItem());
                     stored_pro.execute();
-                    JOptionPane.showMessageDialog(null, "Saved");
+                    JOptionPane.showMessageDialog(null, "Сохранить");
                     groupCB.setSelectedItem(null);
                     kruzhokCB.setSelectedItem(null);
                     nationalityCB.setSelectedItem(null);
@@ -143,12 +131,25 @@ public class AllChildren extends javax.swing.JFrame {
                     stored_pro = conn.prepareCall("{call delete_child (?)}");
                     stored_pro.setString(1, id.getText());
                     stored_pro.execute();
-                    JOptionPane.showMessageDialog(null, "Deleted");
+                    JOptionPane.showMessageDialog(null, "Удалить");
                 }catch(Exception ex){
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, ex);
                 }
                 UpdateJTable();
+            }
+        });
+
+        отчетПоIdButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showById();
+            }
+        });
+        отчетButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showMeAllReport();
             }
         });
     }
@@ -176,8 +177,8 @@ public class AllChildren extends javax.swing.JFrame {
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
             JasperViewer.viewReport(jasperPrint, false);
         }
-        catch(Exception e){
-            e.printStackTrace();
+        catch(Exception ex){
+            ex.printStackTrace();
         }
     }
     private void UpdateJTable(){
@@ -188,8 +189,8 @@ public class AllChildren extends javax.swing.JFrame {
             rs = statement.executeQuery(sql);
             this.jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         }
-        catch(Exception e){
-            e.printStackTrace();
+        catch(Exception ex){
+            ex.printStackTrace();
         }
     }
     private void showById(){
@@ -202,8 +203,8 @@ public class AllChildren extends javax.swing.JFrame {
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hm, conn);
             JasperViewer.viewReport(jasperPrint, false);
         }
-        catch(Exception e){
-            e.printStackTrace();
+        catch(Exception ex){
+            ex.printStackTrace();
         }
     }
 
