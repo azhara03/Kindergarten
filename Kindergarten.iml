@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/OneDrive/Документы/NetBeansProjects/Shop1/í¿í½¿«ΓÑ¬¿/sqljdbc42.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="sqljdbc42" level="application" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/kurs4/1c/mssql-jdbc-12.4.2.jre11.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/commons-collections-3.2.1.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/commons-beanutils-1.8.2.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/commons-digester-2.1.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/groovy-all-2.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/jasperreports-5.6.0.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/livingdoc-confluence5-plugin-1.1.2.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/rs2xml.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/livingdoc-confluence5-plugin-1.1.2.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/rs2xml.jar!/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
