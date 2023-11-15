@@ -5,11 +5,7 @@ import java.util.HashMap;
 
 import net.proteanit.sql.DbUtils;
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.design.JRDesignQuery;
-import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class Employees extends JFrame {
@@ -77,6 +73,7 @@ public class Employees extends JFrame {
                 UpdateJTable2();
             }
         });
+
         table1.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -132,6 +129,7 @@ public class Employees extends JFrame {
                 UpdateJTable2();
             }
         });
+
         добавитьButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -161,12 +159,14 @@ public class Employees extends JFrame {
                 UpdateJTable2();
             }
         });
+
         отчетПоНомеруButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 showById();
             }
         });
+
         просмотретьОтчетButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -182,7 +182,6 @@ public class Employees extends JFrame {
             statement = conn.createStatement();
             rs = statement.executeQuery(sql);
             this.table1.setModel(DbUtils.resultSetToTableModel(rs));
-            //setResizable(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -238,31 +237,6 @@ public class Employees extends JFrame {
     private void showMeAllReport() {
 
         conn = Main.ConnectDB();
-            /*JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
-            String sql = "SELECT View_employee.\"id\" AS View_employee_id, View_employee.\"FIO\" AS View_employee_FIO, "
-                    + "View_employee.\"dateborn\" AS View_employee_dateborn, View_employee.\"position\" AS View_employee_position,"
-                    + " View_employee.\"adress\" AS View_employee_adress, View_employee.\"phoneNumber\" AS View_employee_phoneNumber, "
-                    + "View_employee.\"kruzhok\" AS View_employee_kruzhok, View_employee.\"groups\" AS View_employee_groups FROM \"dbo\".\"View_employee\" View_employee";
-            JRDesignQuery newQuery = new JRDesignQuery();
-            newQuery.setText(sql);
-            jasperDesign.setQuery(newQuery);
-            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
-            JasperViewer.viewReport(jasperPrint, false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-            /*JRBeanCollectionDataSource beanCollectionDataSource= new JRBeanCollectionDataSource()
-            JasperReport jreport = JasperCompileManager.compileReport("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
-
-            // The data source to use to create the report
-            JRBeanCollectionDataSource jcs = new JRBeanCollectionDataSource(list);
-            JasperPrint jprint = JasperFillManager.fillReport(jreport, null, jcs);
-
-            // Viewing the report
-            JasperViewer.viewReport(jprint, false);
-    } catch (JRException e) {
-            throw new RuntimeException(e);*/
 
         try {
             String reportPath = "C:/Users/VICTUS/IdeaProjects/Kindergarten/src/reports/reportEmpl.jasper"; // Путь к файлу .jasper

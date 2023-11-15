@@ -1,10 +1,9 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.*;
 
-public class MainForm extends JFrame{
+public class MainForm extends JFrame {
     private JButton buttonYasli;
     private JButton buttonMiddle;
     private JButton button1;
@@ -14,13 +13,10 @@ public class MainForm extends JFrame{
     private JButton buttonList;
     private JButton buttonEmpl;
 
-    Connection conn;
-    ResultSet rs;
     public MainForm() {
         buttonEmpl.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //new Employees().setVisible(true);
                 Employees form1 = new Employees();
                 form1.setVisible(true);
                 form1.setContentPane(form1.jpanel);
@@ -29,6 +25,7 @@ public class MainForm extends JFrame{
                 form1.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
+
         buttonYasli.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,21 +37,59 @@ public class MainForm extends JFrame{
                 form2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
+
         buttonList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AllChildren form3 = new AllChildren();
                 form3.setVisible(true);
-                form3.setContentPane(form3.panel);
-                form3.setTitle("Список всех детей");
-                form3.setSize(600, 450);
-                form3.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-                AllChildren form3 = new AllChildren();
-                form3.setVisible(true);
                 form3.setContentPane(form3.panelchill);
-                form3.setTitle("Ясли");
-                form3.setSize(600, 450);
+                form3.setTitle("Список всех детей");
+                form3.setSize(650, 500);
                 form3.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            }
+        });
+
+        buttonSenior.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        buttonMiddle.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MiddleG form4 = new MiddleG();
+                form4.setVisible(true);
+                form4.setContentPane(form4.panel);
+                form4.setTitle("Список средней группы");
+                form4.setSize(650, 500);
+                form4.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            }
+        });
+
+        buttonSenior.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SeniorG form5 = new SeniorG();
+                form5.setVisible(true);
+                form5.setContentPane(form5.panel);
+                form5.setTitle("Список старшей группы");
+                form5.setSize(650, 500);
+                form5.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            }
+        });
+
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JuniorG form5 = new JuniorG();
+                form5.setVisible(true);
+                form5.setContentPane(form5.panel);
+                form5.setTitle("Список младшей группы");
+                form5.setSize(650, 500);
+                form5.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
     }

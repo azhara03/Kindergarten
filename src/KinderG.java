@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class KinderG extends javax.swing.JFrame{
+public class KinderG extends javax.swing.JFrame {
     public JPanel panel;
     private JTable table1;
 
@@ -20,15 +20,14 @@ public class KinderG extends javax.swing.JFrame{
         UpdateJTable();
     }
 
-    private void UpdateJTable(){
-        try{
+    private void UpdateJTable() {
+        try {
             conn = Main.ConnectDB();
             String sql = "SELECT * FROM [View_id4]";
             statement = conn.createStatement();
             rs = statement.executeQuery(sql);
             this.table1.setModel(DbUtils.resultSetToTableModel(rs));
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
