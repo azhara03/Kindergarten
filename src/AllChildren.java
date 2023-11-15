@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class AllChildren extends javax.swing.JFrame {
 
-    private JPanel panel;
+    public JPanel panelchill;
     private JTable jTable1;
     private JTextField id;
     private JTextField pNumberD;

@@ -43,12 +43,12 @@ public class MainForm extends JFrame{
         buttonList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                KinderG form2 = new KinderG();
-                form2.setVisible(true);
-                form2.setContentPane(form2.panel);
-                form2.setTitle("Ясли");
-                form2.setSize(600, 450);
-                form2.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                AllChildren form3 = new AllChildren();
+                form3.setVisible(true);
+                form3.setContentPane(form3.panelchill);
+                form3.setTitle("Ясли");
+                form3.setSize(600, 450);
+                form3.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             }
         });
     }

@@ -16,8 +16,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="sqljdbc42" level="application" />
-    <orderEntry type="module-library">
+    <orderEntry type="library" exported="" name="sqljdbc42" level="application" />
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/kurs4/1c/mssql-jdbc-12.4.2.jre11.jar!/" />
@@ -34,7 +34,6 @@
           <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/commons-digester-2.1.jar!/" />
           <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/commons-logging-1.1.1.jar!/" />
           <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/groovy-all-2.0.1.jar!/" />
-          <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/jasperreports-5.6.0.jar!/" />
           <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/livingdoc-confluence5-plugin-1.1.2.jar!/" />
           <root url="jar://$USER_HOME$/Downloads/Telegram Desktop/rs2xml.jar!/" />
         </CLASSES>
@@ -45,7 +44,7 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-beanutils-1.8.2.jar!/" />
@@ -53,7 +52,6 @@
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-digester-2.1.jar!/" />
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/commons-logging-1.1.1.jar!/" />
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/groovy-all-2.0.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/../4 курс/libraryK/jasperreports-5.6.0.jar!/" />
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/livingdoc-confluence5-plugin-1.1.2.jar!/" />
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/sqljdbc42.jar!/" />
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/swingx-1.6.1.jar!/" />
@@ -64,6 +62,24 @@
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/livingdoc-confluence5-plugin-1.1.2.jar!/" />
           <root url="jar://$MODULE_DIR$/../4 курс/libraryK/rs2xml.jar!/src" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jasperreports-6.20.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/commons-collections4-4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>

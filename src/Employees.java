@@ -8,6 +8,7 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
@@ -81,7 +82,6 @@ public class Employees extends JFrame {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 try {
-                    //TableModel model=jTable2.getModel();
                     conn = Main.ConnectDB();
                     int row = table1.getSelectedRow();
                     String Id = (table1.getModel().getValueAt(row, 0).toString());
@@ -92,13 +92,12 @@ public class Employees extends JFrame {
                         id.setText(rs.getString("id"));
                         FIO.setText(rs.getString("FIO"));
                         date.setText(rs.getString("dateBorn"));
-
                         Object selectedItem = position.getSelectedItem();
-                        //position.setText(model.getValueAt(row, 3).toString());
                         address.setText(rs.getString("adress"));
                         pNumber.setText(rs.getString("phoneNumber"));
                         Object selectedItem1 = kruzhok.getSelectedItem();
                         Object selectedItem2 = group.getSelectedItem();
+                        param.setText(rs.getString("id"));
 
                     }
                     pst.close();
@@ -238,7 +237,7 @@ public class Employees extends JFrame {
 
     private void showMeAllReport() {
 
-            conn = Main.ConnectDB();
+        conn = Main.ConnectDB();
             /*JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
             String sql = "SELECT View_employee.\"id\" AS View_employee_id, View_employee.\"FIO\" AS View_employee_FIO, "
                     + "View_employee.\"dateborn\" AS View_employee_dateborn, View_employee.\"position\" AS View_employee_position,"
@@ -265,33 +264,28 @@ public class Employees extends JFrame {
     } catch (JRException e) {
             throw new RuntimeException(e);*/
 
-           /* try {
-                // Загрузка JRXML файла
-                JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\VICTUS\\IdeaProjects\\Kindergarten\\src\\report.jrxml");
-
-                // Создание пустого отчета JasperPrint (без данных)
-                JasperPrint jasperPrint = new JasperPrint();
-
-                // Заполнение отчета данными из JRXML-шаблона
-                JasperFillManager.fillReport(jasperReport, new JRBaseEmptyDataSource(), jasperPrint);
-
-                // Отображение отчета в JasperViewer
-                JasperViewer viewer = new JasperViewer(jasperPrint, false);
-                viewer.setVisible(true);
-            } catch (JRException e) {
-                e.printStackTrace();
-            }*/
+        try {
+            String reportPath = "C:/Users/VICTUS/IdeaProjects/Kindergarten/src/reports/reportEmpl.jasper"; // Путь к файлу .jasper
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(reportPath);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
+            JasperViewer viewer = new JasperViewer(jasperPrint, false);
+            viewer.setVisible(true);
+        } catch (JRException e) {
+            e.printStackTrace();
         }
+    }
 
-        private void showById() {
+    private void showById() {
         try {
             conn = Main.ConnectDB();
-            JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\VICTUS\\Documents\\NetBeansProjects\\kindergarten\\src\\kindergarten\\newReport1.jrxml");
+
+            String reportPath = "C:/Users/VICTUS/IdeaProjects/Kindergarten/src/reports/reportEmplById.jasper";
             HashMap hm = new HashMap();
-            hm.put("param_id2", Integer.parseInt(param.getText().toString()));
-            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+            hm.put("param", Long.parseLong(param.getText().toString()));
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(reportPath);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hm, conn);
-            JasperViewer.viewReport(jasperPrint, false);
+            JasperViewer viewer = new JasperViewer(jasperPrint, false);
+            viewer.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
